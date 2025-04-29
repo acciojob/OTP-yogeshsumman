@@ -1,39 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>OTP Verification</title>
 </head>
 <body>
-	<div style="text-align: center; padding: 20px;">
-		<h1 id="verification_heading">Verify Your Account</h1>
-		<p id="verification_subtext">We emailed you the six digit code to acciojob@email.com. Enter the code below to confirm your email address.</p>
-		<div class="code-container" style="display: flex; justify-content: center; gap: 10px; margin: 20px 0;">
-			<input type="text" id="code-1" maxlength="1" class="code" style="width: 40px; height: 40px; text-align: center; font-size: 20px; border: 1px solid #ccc; border-radius: 5px;" />
-			<input type="text" id="code-2" maxlength="1" class="code" style="width: 40px; height: 40px; text-align: center; font-size: 20px; border: 1px solid #ccc; border-radius: 5px;" />
-			<input type="text" id="code-3" maxlength="1" class="code" style="width: 40px; height: 40px; text-align: center; font-size: 20px; border: 1px solid #ccc; border-radius: 5px;" />
-			<input type="text" id="code-4" maxlength="1" class="code" style="width: 40px; height: 40px; text-align: center; font-size: 20px; border: 1px solid #ccc; border-radius: 5px;" />
-			<input type="text" id="code-5" maxlength="1" class="code" style="width: 40px; height: 40px; text-align: center; font-size: 20px; border: 1px solid #ccc; border-radius: 5px;" />
-			<input type="text" id="code-6" maxlength="1" class="code" style="width: 40px; height: 40px; text-align: center; font-size: 20px; border: 1px solid #ccc; border-radius: 5px;" />
-		</div>
-	</div>
-	<script type="text/javascript" src="./script.js">
-		document.addEventListener('DOMContentLoaded', () => {
-			const inputs = document.querySelectorAll('.code');
-			inputs.forEach((input, index) => {
-				input.addEventListener('input', () => {
-					if (input.value.length === 1 && index < inputs.length - 1) {
-						inputs[index + 1].focus();
-					}
-				});
-				input.addEventListener('keydown', (e) => {
-					if (e.key === 'Backspace' && index > 0) {
-						inputs[index - 1].value = '';
-						inputs[index - 1].focus();
-					}
-				});
-			});
-			inputs[0].focus();
-		});
-	</script>
+    <div style="text-align: center; padding: 20px;">
+        <h1 id="verification_heading">Verify Your Account</h1>
+        <p id="verification_subtext">We emailed you the six digit code to acciojob@email.com. Enter the code below to confirm your email address.</p>
+        <div class="code-container" style="display: flex; justify-content: center; gap: 10px; margin: 20px 0;">
+            <input type="text" id="code-1" maxlength="1" class="code" data-index="0" style="width: 40px; height: 40px; text-align: center; font-size: 20px; border: 1px solid #ccc; border-radius: 5px;" />
+            <input type="text" id="code-2" maxlength="1" class="code" data-index="1" style="width: 40px; height: 40px; text-align: center; font-size: 20px; border: 1px solid #ccc; border-radius: 5px;" />
+            <input type="text" id="code-3" maxlength="1" class="code" data-index="2" style="width: 40px; height: 40px; text-align: center; font-size: 20px; border: 1px solid #ccc; border-radius: 5px;" />
+            <input type="text" id="code-4" maxlength="1" class="code" data-index="3" style="width: 40px; height: 40px; text-align: center; font-size: 20px; border: 1px solid #ccc; border-radius: 5px;" />
+            <input type="text" id="code-5" maxlength="1" class="code" data-index="4" style="width: 40px; height: 40px; text-align: center; font-size: 20px; border: 1px solid #ccc; border-radius: 5px;" />
+            <input type="text" id="code-6" maxlength="1" class="code" data-index="5" style="width: 40px; height: 40px; text-align: center; font-size: 20px; border: 1px solid #ccc; border-radius: 5px;" />
+        </div>
+    </div>
+    <script type="text/javascript" src="./script.js"></script>
 </body>
 </html>
